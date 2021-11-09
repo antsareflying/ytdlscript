@@ -22,7 +22,7 @@ while FILES_EXIST:
     filelist = os.listdir('C:/users/seong/archive/public/videos')
     sortedfilelist = [i for i in filelist if os.path.isfile(i) and i != "downloadedarchive.txt"]
     sortedfilelist.sort(key=sortlength)
-    if len(sortedfilelist) == 1 and sortedfilelist[0] == "downloadedarchive.txt":
+    if len(sortedfilelist) == 0:
         FILES_EXIST = False
         print("no more individual files left, exiting")
         exit()
