@@ -11,7 +11,7 @@ if len(sys.argv) != 2:
 
 ytlink = sys.argv[1]
 
-ytdl_command = f"yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail --no-playlist --download-archive downloadedarchive.txt -f mp4 -o C:/users/seong/archive/public/videos/%(title)s.%(ext)s {ytlink}"
+ytdl_command = f"yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail --no-playlist --download-archive C:/users/seong/archive/public/videos/downloadedarchive.txt -f mp4 -o \"C:/users/seong/archive/public/videos/%(title)s.%(ext)s\" {ytlink}"
 
 download = subprocess.run(ytdl_command, check=True)
 
