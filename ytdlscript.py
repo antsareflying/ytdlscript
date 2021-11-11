@@ -28,7 +28,7 @@ while FILES_EXIST:
         exit()
     filename = sortedfilelist[0]
 
-    filenamewithoutext = os.path.basename(filename).split('.')[0]
+    filenamewithoutext ,ext = os.path.splitext(filename)
 
     mkdirpath = f"C:/users/seong/archive/public/videos/{filenamewithoutext}"
 
