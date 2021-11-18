@@ -7,25 +7,30 @@ def sortlength(e):
 
 if len(sys.argv) != 2:
     print("Usage: python ytdlscript <yt link>")
-    exit()
+    sys.exit()
+
+if os.getcwd != "C:/Users/seong/archive/public/videos":
+    print("not in public videos directory")
+    sys.exit()
 
 ytlink = sys.argv[1]
 
 ytdl_command = f"yt-dlp --write-description --write-info-json --write-annotations --write-sub --write-thumbnail --no-playlist --download-archive C:/users/seong/archive/public/videos/downloadedarchive.txt -f mp4 -o \"C:/users/seong/archive/public/videos/%(title)s.%(ext)s\" {ytlink}"
 
-download = subprocess.run(ytdl_command, check=True)
+subprocess.run(ytdl_command, check=True)
 
 
 FILES_EXIST = True
 while FILES_EXIST:
     print("starting while loop")
     filelist = os.listdir('C:/users/seong/archive/public/videos')
+    print(filelist)
     sortedfilelist = [i for i in filelist if os.path.isfile(i) and i != "downloadedarchive.txt"]
-    sortedfilelist.sort(key=sortlength)
+    print(sortedfilelist)
     if len(sortedfilelist) == 0:
         FILES_EXIST = False
         print("no more individual files left, exiting")
-        exit()
+        sys.exit()
     filename = sortedfilelist[0]
 
     filenamewithoutext ,ext = os.path.splitext(filename)
