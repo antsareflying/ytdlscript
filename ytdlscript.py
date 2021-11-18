@@ -25,9 +25,7 @@ FILES_EXIST = True
 while FILES_EXIST:
     print("starting while loop")
     filelist = os.listdir('C:/users/seong/archive/public/videos')
-    print(filelist)
     sortedfilelist = [i for i in filelist if os.path.isfile(i) and i != "downloadedarchive.txt"]
-    print(sortedfilelist)
     if len(sortedfilelist) == 0:
         FILES_EXIST = False
         print("no more individual files left, exiting")
