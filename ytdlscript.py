@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
     sys.exit()
 
 
-if os.getcwd() != "C:/Users/seong/archive/public/videos":
+if os.getcwd() != "C:\\Users\\seong\\archive\\public\\videos":
     print("not in public videos directory")
     sys.exit()
 
