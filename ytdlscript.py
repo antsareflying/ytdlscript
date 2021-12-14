@@ -40,7 +40,7 @@ if os.getcwd() != "C:\\Users\\seong\\archive\\public\\videos":
 
 ytlink = sys.argv[1]
 
-ytdl_command = f"yt-dlp --write-description --write-info-json --write-annotations --write-sub --sub-langs en --write-thumbnail --write-comments --no-playlist --verbose --download-archive C:/users/seong/archive/public/videos/downloadedarchive.txt -a C:/users/seong/archive/public/videos/downloadlinks.txt -f mp4 -o \"C:/users/seong/archive/public/videos/NA-%(playlist_title)s-%(playlist_id)s/%(upload_date)s-%(title)s-%(id)s/%(upload_date)s-%(title)s-%(id)s.%(ext)s\" {ytlink}"
+ytdl_command = f"yt-dlp --write-description --write-info-json --write-annotations --write-sub --sub-langs en --write-thumbnail --write-comments --no-playlist --verbose --download-archive C:/users/seong/archive/public/videos/downloadedarchive.txt -a C:/users/seong/archive/public/videos/downloadlinks.txt -f bv*+ba/b -o \"C:/users/seong/archive/public/videos/NA-%(playlist_title)s-%(playlist_id)s/%(upload_date)s-%(title)s-%(id)s/%(upload_date)s-%(title)s-%(id)s.%(ext)s\" {ytlink}"
 
 subprocess.run(ytdl_command, check=True)
 
